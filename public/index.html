@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>MinkenApp</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./mobile.css">
+
+        <!-- ICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./appicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./appicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./appicon/favicon-16x16.png">
+        <link rel="manifest" href="./appicon/site.webmanifest">
+        <link rel="mask-icon" href="./appicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="./appicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="./appicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+        <script type="module" src="./index.js" async defer></script>
+    </head>
+    <body>
+
+        <!-- MODAL -->
+        <div id="modal" class="hidden">
+            <div id="modal-header"></div>
+            <div id="modal-body"></div>
+        </div>
+
+        <!-- NAVBAR -->
+
+        <nav id="top-nav" class="hidden">
+            <div id="app-title">民研</div>
+            <div class="buttons-group">
+                <button id="my-account-button" class="icon-button" type="button"><img src="" alt="icon" class="display-image"></button>
+                <button id="main-kebab-menu" class="icon-button" type="button"><img src="./images/kebab.svg" alt="menu"></button>
+            </div>
+        </nav>
+        <nav id="bottom-nav" class="hidden">
+            <div class="buttons-group">
+                <button id="reservation-button" class="icon-button">
+                    <img src="./images/calendar.svg">
+                    <div>予約</div>
+                </button>
+                <button id="home-button" class="icon-button selected">
+                    <img src="./images/home.svg">
+                    <div>ホーム</div>
+                </button>
+                <button id="member-button" class="icon-button">
+                    <img src="./images/crowd.svg">
+                    <div>メンバー</div>
+                </button>
+            </div>
+        </nav>
+
+        <!-- ACCORDION -->
+        <div id="accordion" class="hidden">
+            <div id="accordion-header"></div>
+            <div id="accordion-body"></div>
+        </div>
+
+        <!-- PAGES -->
+
+        <div id="accordion-buttons-container" class="hidden">
+            <button id="home-accordion-button" class="accordion-button"><img src="./images/plus.svg"></button>
+            <button id="member-accordion-button" class="accordion-button hidden"><img src="./images/plus.svg"></button>
+        </div>
+
+        <div id="pages-container" class="hidden">
+            <div id="reservation-page" class="page hidden">
+                <div id="calendar-container" class="page-content">
+                    <div class="content-header">
+                        <button id="calendar-back" class="icon-button"><img src="./images/arrowleft.svg" alt="next"></button>
+                        <div id="calendar-year-month-display"></div>
+                        <button id="calendar-next" class="icon-button"><img src="./images/arrowright.svg" alt="back"></button>
+                    </div>
+                    <div id="calendar-body">
+                        <div class="weekday">日</div>
+                        <div class="weekday">月</div>
+                        <div class="weekday">火</div>
+                        <div class="weekday">水</div>
+                        <div class="weekday">木</div>
+                        <div class="weekday">金</div>
+                        <div class="weekday">土</div>
+                    </div>
+                </div>
+                <div id="reservations-container" class="page-content hidden">
+                    <div class="content-header"></div>
+                </div>
+            </div>
+
+            <div id="home-page" class="page">
+                <div class="page-content">
+                    <div class="content-header">お知らせ</div>
+                    <div id="notices-container" class="content-body"></div>
+                </div>
+                <div class="page-content">
+                    <div class="content-header">バンド募集</div>
+                    <div id="recruitments-container" class="content-body"></div>
+                </div>
+            </div>
+
+            <div id="member-page" class="page hidden">
+                <div class="page-content">
+                    <div class="content-header">
+                        <button id="my-bands-button" toggled="off">
+                            <div>自分のバンド</div>
+                            <img src="./images/show.svg">
+                        </button>
+                    </div>
+                    <div id="my-bands-container" class="item-container"></div>
+                </div>
+                <div class="page-content">
+                    <div class="content-header">
+                        <button id="all-bands-button" toggled="off">
+                            <div>バンド一覧</div>
+                            <img src="./images/show.svg">
+                        </button>
+                    </div>
+                    <div id="all-bands-container" class="item-container"></div>
+                </div>
+                <div class="page-content">
+                    <div class="content-header">
+                        <button id="all-users-button" toggled="off">
+                            <div>部員一覧</div>
+                            <img src="./images/show.svg">
+                        </button>
+                    </div>
+                    <div id="all-users-container" class="item-container"></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
