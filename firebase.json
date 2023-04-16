@@ -1,55 +1,62 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "hosting": {
-    "headers": [
-      {
-        "source": "/**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "/images/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=3600"
-          }
-        ]
-      }
-    ],
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  "emulators": {
     "firestore": {
-      "port": 8080
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
     },
     "hosting": {
-      "port": 5000
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "/images/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=3600"
+            }
+          ]
+        }
+      ]
     },
-    "ui": {
-      "enabled": true
+    "emulators": {
+      "firestore": {
+        "port": 8080
+      },
+      "hosting": {
+        "port": 5000
+      },
+      "ui": {
+        "enabled": true
+      },
+      "singleProjectMode": true,
+      "auth": {
+        "port": 9099
+      },
+      "storage": {
+        "port": 9199
+      }
     },
-    "singleProjectMode": true
-  },
-  "storage": {
-    "rules": "storage.rules"
+    "storage": {
+      "rules": "storage.rules"
+    }
   }
-}
+  
