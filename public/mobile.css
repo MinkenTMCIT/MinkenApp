@@ -544,12 +544,12 @@ button {
     padding: 10px 0;
     overflow-x: auto;
     display: -webkit-inline-box;
-    gap: 10px;
     scroll-snap-type: x mandatory;
 }
 
 .post {
     position: relative;
+    margin-right: 10px;
     height: 100%;
     width: 80vw;
     max-width: 350px;
