@@ -283,7 +283,7 @@ button {
 
 #add-timeslot-button {
     margin: auto;
-    height: fit-content;
+    min-width: 90px;
 }
 
 #timeslots-container .item {
