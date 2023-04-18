@@ -823,7 +823,7 @@ function loadHomePageData () {
 
         post.querySelector('.post-user').addEventListener('click', () => { showModal({type:'user', data:postData['username']}); });
 
-        if ( postData['username'] == currentUserData['name'] ) {
+        if ( postData['username'] == currentUserData['name'] || currentUserData['isAdmin'] == true) {
             const postKebabMenu = document.createElement('button');
             postKebabMenu.classList.add('post-kebab-menu', 'icon-button');
             postKebabMenu.setAttribute('type', 'button');
