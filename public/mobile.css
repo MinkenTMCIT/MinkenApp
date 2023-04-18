@@ -12,7 +12,7 @@ html {
     left: 0;
     margin: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     background-color: white;
     overflow-x: clip;
@@ -462,7 +462,7 @@ button {
 /* PAGE */
 
 #pages-container {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -472,7 +472,7 @@ button {
 .page {
     position: fixed;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     padding: 60px 10px 80px 10px;
     background-color: #FFFFFF;
