@@ -1192,8 +1192,8 @@ function showResetPasswordModal () {
     closeModal();
     modal.classList.remove('hidden');
     modalHeader.innerHTML = `
-        <button id="back-button" class="icon-button" type="button""><img src="./images/leftArrow.svg"></button>
-        <div id="modal-title">パスワード再設定</div>
+        <button id="back-button" class="icon-button" type="button""><img src="./images/arrowleft.svg"></button>
+        <div id="modal-title">Reset Password</div>
     `;
     modalBody.innerHTML = `
         <div id="modal-page-0" class="modal-page">
