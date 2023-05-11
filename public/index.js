@@ -117,8 +117,8 @@ async function updateUser (displayImage, name, furigana, course, part, email) {
     }
 
     let displayImageLink;
-    if ( displayImage === './images/nodisplayimage.jpg' || displayImage === currentUserData['displayImage'] ) {
-        displayImageLink = displayImage;
+    if ( displayImage === './images/nodisplayimage.jpg' || displayImage === currentUserData['displayImage'] || displayImage === undefined ) {
+        displayImageLink = './images/nodisplayimage.jpg';
     } else {
         const displayImageRef = ref(storage, `displayImages/${name}`);
         const displayImageBase64 = displayImage.split(',')[1];
@@ -151,8 +151,8 @@ async function updateUser (displayImage, name, furigana, course, part, email) {
 
 async function createBand (name, members, leader, displayImage) {
     let displayImageLink;
-    if ( displayImage === './images/nodisplayimage.jpg' || displayImage === currentUserData['displayImage'] ) {
-        displayImageLink = displayImage;
+    if ( displayImage === './images/nodisplayimage.jpg' || displayImage === currentUserData['displayImage'] || displayImage === undefined) {
+        displayImageLink = './images/nodisplayimage.jpg';
     } else {
         const displayImageRef = ref(storage, `displayImages/${name}`);
         const displayImageBase64 = displayImage.split(',')[1];
@@ -215,8 +215,8 @@ async function updateBand (id, newName, newMembers, leader, displayImage) {
     }
 
     let displayImageLink;
-    if ( displayImage === './images/nodisplayimage.jpg' || displayImage === currentUserData['displayImage'] ) {
-        displayImageLink = displayImage;
+    if ( displayImage === './images/nodisplayimage.jpg' || displayImage === currentUserData['displayImage'] || displayImage === undefined) {
+        displayImageLink = './images/nodisplayimage.jpg';
     } else {
         const displayImageRef = ref(storage, `displayImages/${name}`);
         const displayImageBase64 = displayImage.split(',')[1];
