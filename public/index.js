@@ -150,13 +150,6 @@ async function updateUser (displayImage, name, furigana, course, part, email) {
 }
 
 async function createBand (name, members, leader, displayImage) {
-    members.forEach( async (memberName) => {
-        const memberId = getDocByType(memberName, 'name', 'users').id;
-        await updateDoc(doc(db, 'users', memberId), {
-            'bands': arrayUnion(name)
-        });
-    })
-
     let displayImageLink;
     if ( displayImage === './images/nodisplayimage.jpg' || displayImage === currentUserData['displayImage'] ) {
         displayImageLink = displayImage;
@@ -180,6 +173,13 @@ async function createBand (name, members, leader, displayImage) {
         'leader': leader,
         'displayImage': displayImageLink
     });
+
+    members.forEach( async (memberName) => {
+        const memberId = getDocByType(memberName, 'name', 'users').id;
+        await updateDoc(doc(db, 'users', memberId), {
+            'bands': arrayUnion(name)
+        });
+    })
 
     await getFirebaseDocs('users');
     currentUserData = await getDocByType(currentUser.uid, 'id', 'users').data();
